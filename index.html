@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Winnipeg Lane Closures Explorer</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>City of Winnipeg Lane Closures</h1>
+      <p>Find out which streets and lanes are currently closed in Winnipeg.</p>
+    </header>
+
+    <main>
+      <section class="search">
+        <h2>Search for Lane Closures</h2>
+
+        <form id="searchForm">
+          <input type="text" id="streetInput" placeholder="Enter a street name (e.g. Burrows Ave)" required />
+          <button type="submit">Search</button>
+        </form>
+
+        <p id="status"></p>
+      </section>
+
+      <section class="results">
+        <h2>Results</h2>
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>Street</th>
+              <th>Type</th>
+              <th>Reason</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- Results will be populated here -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>Data provided by the <a href="https://data.winnipeg.ca/Transportation-Planning-Traffic-Management/Lane-Closure/h367-iifg" target="_blank">City of Winnipeg Open Data Portal</a>.</p>
+    </footer>
+
+  </body>
+</html>
