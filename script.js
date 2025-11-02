@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     displayResults(data, tableBody, statusText);
   });
 
-  const APP_TOKEN = "2ll31e9kyqhsy7zuoxxlqh1oyn22li9c2te2wwn8oosm0my5qa";
+  
 
   async function fetchLaneClosures(streetName) {
     try {
