@@ -38,9 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const apiUrl =
         `https://data.winnipeg.ca/resource/h367-iifg.json` +
-        `?$$app_token=${APP_TOKEN}` +
-        `&$where=lower(street_name) like lower('%${streetName}%')` +
-        `&$order=start_date DESC` +
+        `?$where=lower(primary_street) like lower('%${streetName}%')` +
+        `&$order=date_closed_from DESC` +
         `&$limit=50`;
 
       const encodedURL = encodeURI(apiUrl);
@@ -68,16 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    statusEl.textContent = "";
+    statusEl.textContent = `Found ${data.length} closure(s).`;
 
+    // Loop through and display each record
     data.forEach((item) => {
       const tr = document.createElement("tr");
       tr.innerHTML = `
-        <td>${item.street_name || "N/A"}</td>
-        <td>${item.closure_type || "N/A"}</td>
-        <td>${item.reason || "N/A"}</td>
-        <td>${item.start_date || "N/A"}</td>
-        <td>${item.end_date || "N/A"}</td>
+        <td>${item.primary_street || "N/A"}</td>
+        <td>${item.cross_street || "N/A"}</td>
+        <td>${item.traffic_effect || "N/A"}</td>
+        <td>${item.date_closed_from || "N/A"}</td>
+        <td>${item.date_closed_to || "N/A"}</td>
       `;
       tbody.appendChild(tr);
     });
